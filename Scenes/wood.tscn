@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://01ca408oo76o"]
+
+[ext_resource type="PackedScene" uid="uid://djh2tk8f1yj1a" path="res://Assets/Environment/tree-log-small.glb" id="2_uplrk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tvdki"]
+height = 0.651419
+radius = 0.111964
+
+[node name="Wood" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.404694, 0.112103)
+shape = SubResource("CylinderShape3D_tvdki")
+
+[node name="tree-log-small2" parent="RigidBody3D" instance=ExtResource("2_uplrk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.4, 0)

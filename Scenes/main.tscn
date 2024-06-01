@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn2yn10x6cv7j"]
+
+[ext_resource type="PackedScene" uid="uid://b3uclsunbtnc2" path="res://Scenes/tree.tscn" id="1_7q113"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o8ppv"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ifyh"]
+size = Vector3(60, 2, 60)
+
+[node name="Main" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_o8ppv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_2ifyh")
+skeleton = NodePath("../..")
+
+[node name="Tree" parent="." instance=ExtResource("1_7q113")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0594888, 0, 0.036593)
+health = 0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.937179, 0.34885, 0, -0.34885, 0.937179, -0.22437, 1.13379, 3.51687)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.878409, -1.30893e-08, -0.47791, 0.178541, 0.927595, 0.328162, 0.443307, -0.373587, 0.814808, -1.40183, 5.12744, 9.00911)

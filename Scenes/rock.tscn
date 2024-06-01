@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx08mt5m5v64i"]
+
+[ext_resource type="Script" path="res://Scripts/rock.gd" id="1_41dwr"]
+[ext_resource type="PackedScene" uid="uid://cslsw251qsb7" path="res://Assets/Environment/rock-sand-a.glb" id="1_q0mg1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fi6tf"]
+size = Vector3(0.45636, 0.38562, 0.333435)
+
+[node name="Rock" type="Node3D"]
+script = ExtResource("1_41dwr")
+
+[node name="rock-sand-a2" parent="." instance=ExtResource("1_q0mg1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0433044, 0.197461, -0.00650024)
+shape = SubResource("BoxShape3D_fi6tf")
