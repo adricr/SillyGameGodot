@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn2yn10x6cv7j"]
+[gd_scene load_steps=5 format=3 uid="uid://dn2yn10x6cv7j"]
 
 [ext_resource type="PackedScene" uid="uid://b3uclsunbtnc2" path="res://Scenes/tree.tscn" id="1_7q113"]
+[ext_resource type="PackedScene" uid="uid://dbvuw02h2ve36" path="res://Scenes/player.tscn" id="2_tfmjn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8ppv"]
 size = Vector3(60, 2, 60)
@@ -25,8 +26,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0594888, 0, 0.036593)
 health = 0
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.937179, 0.34885, 0, -0.34885, 0.937179, -0.22437, 1.13379, 3.51687)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.878409, -1.30893e-08, -0.47791, 0.178541, 0.927595, 0.328162, 0.443307, -0.373587, 0.814808, -1.40183, 5.12744, 9.00911)
+
+[node name="Player" parent="." instance=ExtResource("2_tfmjn")]
+transform = Transform3D(0.314207, 0, 0.0223352, 0, 0.315, 0, -0.0223352, 0, 0.314207, -0.0181155, 0, -1.54943)
